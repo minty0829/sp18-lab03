@@ -14,7 +14,8 @@ contract GoodAuction is AuctionInterface {
 		reassignment. Must return false on failure and 
 		allow people to retrieve their funds  */
 	function bid() payable external returns(bool) {
-		// YOUR CODE HERE
+		//if bid is highest, then replace current highest & return true
+		//otherwise return false and add to refund map
 	}
 
 	/*  Implement withdraw function to complete new 
@@ -22,7 +23,9 @@ contract GoodAuction is AuctionInterface {
 	    return of owed funds and false on failure
 	    or no funds owed.  */
 	function withdrawRefund() external returns(bool) {
-		// YOUR CODE HERE
+		// if refund map at id is nonzero, send fund to id and return true,
+		// otherwise return false
+		// also check if send() fails, in which case return false
 	}
 
 	/*  Allow users to check the amount they are owed
@@ -55,7 +58,7 @@ contract GoodAuction is AuctionInterface {
 		How do we send people their money back?  */
 
 	function () payable {
-		// YOUR CODE HERE
+		revert();
 	}
 
 }
